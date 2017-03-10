@@ -1,0 +1,32 @@
+{
+  "name": "node-dashbard",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.2",
+    "consolidate": "^0.14.5",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.14.0",
+    "express-session": "^1.15.0",
+    "gridstack": "^0.2.6",
+    "jade": "~1.11.0",
+    "morgan": "~1.7.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "promise-mysql": "^3.0.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-grid-layout": "^0.13.9",
+    "serve-favicon": "~2.3.0",
+    "swig": "^1.4.2"
+  },
+  "description": "The web app to display product",
+  "main": "app.js",
+  "devDependencies": {},
+  "author": "Pieter Fabry",
+  "license": "ISC"
+}

@@ -1,0 +1,12 @@
+INSERT INTO Users ( UserName, Password, FirstName, LastName, Role, Email, DateCreated )
+                       VALUES
+                       ( 'PieterFabry', 'poop', 'Pieter', 'Fabry', 0, 'pieterfabry@observe.tech', NOW()  );
+INSERT INTO Users ( UserName, Password, FirstName, LastName, Role, Email, DateCreated )
+                       VALUES
+                       ( 'admin', 'admin', 'admin', 'admin', 0, 'admin@observe.tech', NOW()  );
+INSERT INTO Users ( UserName, Password, FirstName, LastName, Role, Email, DateCreated )
+                       VALUES
+                       ( 'Farmer', 'Farmer', 'Martin', 'Fabry', 0, 'martin@observe.tech', NOW()  );
+INSERT INTO Users ( UserName, Password, FirstName, LastName, Role, Email, DateCreated )
+                       VALUES
+                       ( 'Manager', 'Manager', 'Jon', 'Fabry', 0, 'jon@observe.tech', NOW()  );

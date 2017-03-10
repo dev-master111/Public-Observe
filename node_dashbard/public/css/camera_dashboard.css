@@ -1,0 +1,16 @@
+video {
+  cursor: pointer; cursor: hand;
+}
+#slider22 .slider-selection {
+	background: #81bfde;
+}
+
+#slider22 .slider-rangeHighlight {
+	background: #f70616;
+}
+#slider23 .slider-selection {
+	background: #81bfde;
+}
+#slider23 .slider-rangeHighlight {
+	background: #f70616;
+}

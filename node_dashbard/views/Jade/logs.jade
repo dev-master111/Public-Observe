@@ -1,0 +1,209 @@
+doctype html
+html(lang='en')
+  head
+  meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+  // Meta, title, CSS, favicons, etc.
+  meta(charset='utf-8')
+  meta(http-equiv='X-UA-Compatible', content='IE=edge')
+  meta(name='viewport', content='width=device-width, initial-scale=1')
+  title Observe 
+  // Bootstrap
+  link(href='/libs/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+  link(href='/libs/bootstrap/css/bootstrap-slider.min.css', rel='stylesheet')
+  // Font Awesome
+  link(href='/libs/font-awesome/css/font-awesome.min.css', rel='stylesheet')
+  // Custom Theme Style
+  link(href='/css/custom.min.css', rel='stylesheet')
+  link(href='/css/weather-icons.min.css', rel='stylesheet')
+  // jQuery
+  script(src='/libs/jquery/jquery.min.js')
+  // Bootstrap
+  script(src='/libs/bootstrap/js/bootstrap.min.js')
+  // Charts
+  script(src='/libs/ChartJS/Chart.min.js')
+  script(src='/js/weather.js')
+  script(src='/js/logs.js')
+  body.container-fluid
+    .container.body
+      .main_container
+        nav.navbar.navbar-default(style='margin-top:6px')
+          .container-fluid
+            .navbar-header
+              button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            #myNavbar.collapse.navbar-collapse
+              ul.nav.navbar-nav
+                li
+                  a(href='camera_dashboard') Overview
+                li
+                  a(href='live') Live
+                li
+                  a(href='finance') Growth Data
+                li.active
+                  a(href='logs') Historical Logs
+              ul.nav.navbar-nav.navbar-right
+                li
+                  a.user-profile.dropdown-toggle(href='javascript:;', data-toggle='dropdown', aria-expanded='false')
+                    | Alistdair Binning
+                    span.fa.fa-angle-down
+                  ul.dropdown-menu.dropdown-usermenu.pull-right
+                    li
+                      a(href='javascript:;')  Profile
+                    li
+                      a(href='javascript:;')
+                        span Settings
+                    li
+                      a(href='index.html')
+                        i.fa.fa-sign-out.pull-right
+                        |  Log Out
+                li.dropdown(role='presentation')
+                  a.dropdown-toggle.info-number(href='javascript:;', data-toggle='dropdown', aria-expanded='false')
+                    i.fa.fa-bell-o
+                    span.badge.bg-green 1
+                  ul#menu1.dropdown-menu.list-unstyled.msg_list(role='menu')
+                    li
+                      a(href='singleCam_dashboard_bad.html')
+                        span.image
+                        span
+                          strong Cage #76413
+                        span.time 3 mins ago
+                        span.message
+                          | Drop in dissolved oxygen - fish swimming quicker. 
+                          strong Reduce feed
+                    li
+                      .text-center
+                        a
+                          strong See All Alerts
+                          i.fa.fa-angle-right
+        // page content
+        div(role='main')
+          br
+          .row.top_tiles
+            .animated.flipInY.col-lg-3.col-md-3.col-sm-6.col-xs-12
+              .tile-stats
+                .icon
+                  i.fa.fa-sort-amount-desc
+                .count 256
+                h3 Kilo Feed
+            .animated.flipInY.col-lg-3.col-md-3.col-sm-6.col-xs-12
+              .tile-stats
+                .icon
+                  i.fa.fa-exclamation
+                .count 1
+                h3 Alert Cage #76413
+            .animated.flipInY.col-lg-3.col-md-3.col-sm-6.col-xs-12
+              .tile-stats
+                .icon
+                  i.fa.fa-bolt
+                .count 10.6
+                h3 Average Speed
+            .animated.flipInY.col-lg-3.col-md-3.col-sm-6.col-xs-12
+              .tile-stats
+                .icon
+                  i.fa.fa-times
+                .count 0
+                h3 Mortalities
+        br
+        .row
+          .col-md-9.col-sm-9.col-xs-12
+            .x_panel.tile.toMakeSame1(style='height:100%')
+              .x_title
+                h2 Feeding Logs
+                .clearfix
+              .x_content
+                div(width='500')
+                  canvas#Fupdating-chart(width='800px', height='200')
+          .col-md-3.col-sm-3.col-xs-12
+            .x_panel.tile.toMakeSame
+              .x_title
+                h2 Feeding Observations
+                .clearfix
+              ul.list-unstyled.top_profiles.scroll-view.pre-scrollable
+                li.media.event
+                  a.pull-left.border-aero.profile_thumb
+                    i.fa.fa-user.aero
+                  .media-body
+                    a.title(href='#') Alisdair Binning
+                    p
+                      strong 6kg 
+                      |  Feed supplied
+                    p
+                      small 21 January 2017
+                    p
+                      small Increased Temperature and more fish on surface hence more feed added
+                li.media.event
+                  a.pull-left.border-green.profile_thumb
+                    i.fa.fa-user.green
+                  .media-body
+                    a.title(href='#') Alisdair Binning
+                    p
+                      strong 6kg 
+                      |  Feed supplied
+                    p
+                      small 21 January 2017
+                    p
+                      small Increased Temperature and more fish on surface hence more feed added
+                li.media.event
+                  a.pull-left.border-blue.profile_thumb
+                    i.fa.fa-user.blue
+                  .media-body
+                    a.title(href='#') Alisdair Binning
+                    p
+                      strong 6kg 
+                      |  Feed supplied
+                    p
+                      small 21 January 2017
+                    p
+                      small Increased Temperature and more fish on surface hence more feed added
+                li.media.event
+                  a.pull-left.border-aero.profile_thumb
+                    i.fa.fa-user.aero
+                  .media-body
+                    a.title(href='#') Alisdair Binning
+                    p
+                      strong 6kg 
+                      |  Feed supplied
+                    p
+                      small 21 January 2017
+                    p
+                      small Increased Temperature and more fish on surface hence more feed added
+                li.media.event
+                  a.pull-left.border-green.profile_thumb
+                    i.fa.fa-user.green
+                  .media-body
+                    a.title(href='#') Alisdair Binning
+                    p
+                      strong 6kg 
+                      |  Feed supplied
+                    p
+                      small 21 January 2017
+                    p
+                      small Increased Temperature and more fish on surface hence more feed added
+        br
+        .row
+          .col-md-4.col-sm-4.col-xs-12
+            .x_panel.tile.toMakeSame1(style='height:100%')
+              .x_title
+                h2 Temperature Logs
+                .clearfix
+              .x_content
+                div(width='500')
+                  canvas#Tupdating-chart(width='350px', height='200')
+          .col-md-4.col-sm-4.col-xs-12
+            .x_panel.tile.toMakeSame1(style='height:100%')
+              .x_title
+                h2 Disolved Oxygen Logs
+                .clearfix
+              .x_content
+                div(width='500')
+                  canvas#Dupdating-chart(width='350px', height='200')
+          .col-md-4.col-sm-4.col-xs-12
+            .x_panel.tile.toMakeSame1(style='height:100%')
+              .x_title
+                h2 Salinity Logs
+                .clearfix
+              .x_content
+                div(width='500')
+                  canvas#Supdating-chart(width='350px', height='200')

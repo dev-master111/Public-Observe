@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Observe </title>
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+    <link href="../build/css/singleCamera.css" rel="stylesheet">
+    <link href="../build/css/bootstrap-slider.min.css" rel="stylesheet">
+    <link href="../build/css/weather-icons.min.css" rel="stylesheet">
+
+    <script src="../build/js/highcharts.js"></script>
+<script src="../build/js/highcharts-3d.js"></script>
+<script src="../build/js/exporting.js"></script>
+<!-- jQuery -->
+<script src="../vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../build/js/Chart.min.js"></script>
+<!-- The moving chart -->
+<script src="../build/js/camera_singleFeedWidget.js"></script>
+<script src="../build/js/suncalc.js"></script>
+<script src="../build/js/bootstrap-slider.min.js"></script>
+<script src="../build/js/camera_Single.js"></script>
+<script src="../build/js/weather.js"></script>
+<script src="../build/js/updatingSensorCharts.js"></script>
+
+</head>
+
+  <body class="container-fluid">
+    <div class="container body">
+      <div class="main_container">
+
+        <!-- page content -->
+
+        <nav class="navbar navbar-default" style="margin-top:6px">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li><a href="camera_dashboard.html">Overview</a></li>
+                <li class="active"><a href="SINGLECAMdashboard.html">Live</a></li>
+                <li><a href="index2.html">Growth Data</a></li>
+                <li><a href="sensor_logs.html">Historical Logs</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Alistdair Binning
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Profile</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li><a href="index.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+
+                <li role="presentation" class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-bell-o"></i>
+                    <span class="badge bg-green">1</span>
+                  </a>
+                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                    <li>
+                      <a href="singleCam_dashboard_bad.html">
+                        <span class="image"></span>
+                        <span>
+                          <strong>Cage #76413</strong></span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                        Drop in dissolved oxygen - fish swimming quicker. <strong>Reduce feed</strong>
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="text-center">
+                        <a>
+                          <strong>See All Alerts</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <!-- video row -->
+        </br>
+        <div class="row">
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel tile overflow_hidden">
+              <div class="x_title">
+                <h2>Camera Stream</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content" id="video_">
+
+                <video width="100%" height="245px"  muted autoplay loop>
+                  <source src="videos/cut.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel tile" style="height:100%">
+              <div class="x_title">
+                <h2>Feeding Parameters</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content" id="feeding_params">
+                <div class="row" style="width:100%">
+                  <div class="col-md-1 col-sm-1 col-xs-1" style="border-right: solid grey 1px;">02:00</div>
+                  <div class="col-md-1 col-sm-1 col-xs-1" style="border-right: solid grey 1px;">04:00</div>
+                  <div class="col-md-1 col-sm-1 col-xs-1" style="border-right: solid grey 1px;">06:00</div>
+                  <div class="col-md-1 col-sm-1 col-xs-1" style="border-right: solid grey 1px;">08:00</div>
+                  <div class="col-md-1 col-sm-1 col-xs-1" style="border-right: solid grey 1px;">10:00</div>
+                  <div class="col-md-1 col-sm-1 col-xs-1" style="border-right: solid grey 1px;">12:00</div>
+                  <div class="col-md-1 col-sm-1 col-xs-1" style="border-right: solid grey 1px;">14:00</div>
+                  <div class="col-md-1 col-sm-1 col-xs-1" style="border-right: solid grey 1px;">16:00</div>
+                  <div class="col-md-1 col-sm-1 col-xs-1" style="border-right: solid grey 1px;">18:00</div>
+                  <div class="col-md-1 col-sm-1 col-xs-1" style="border-right: solid grey 1px;">20:00</div>
+                  <div class="col-md-1 col-sm-1 col-xs-1" style="border-right: solid grey 1px;">22:00</div>
+                  <div class="col-md-1 col-sm-1 col-xs-1" style="border-right: solid grey 1px;">24:00</div>
+                </div>
+                <div class="row" style="width:100%">
+                  <div class="col-md-12 col-sm-12 col-xs-12" style="padding:0px;height:10px" id="day_timeline">
+                    <div id="Night1"  ></div>
+                    <div id="Dawn"    ></div>
+                    <div id="Sunlight"></div>
+                    <div id="Dusk"    ></div>
+                    <div id="Night2"  ></div>
+                    <div class='day_slider' id="slider"></div>
+                  </div>
+                </div>
+                </br>
+                <div class="row" style="width:100%">
+                  <div class="col-md-2 col-sm-2 col-xs-2">
+                    <a class="prev"  style="float:left"> &#10094;</a>
+                  </div>
+                  <div class="col-md-8 col-sm-8 col-xs-8">
+                    <div class="row" style="width:100%">
+                      <div class="col-md-6 col-sm-6 col-xs-12">Meal</div>
+                      <div class="col-md-6 col-sm-6 col-xs-12" id="slides_meal"></div>
+                    </div>
+                    <div class="row" style="width:100%">
+                      <div class="col-md-6 col-sm-6 col-xs-12">Scheduled Time</div>
+                      <div class="col-md-6 col-sm-6 col-xs-12" id="slides_time"></div>
+                    </div>
+                    <div class="row" style="width:100%">
+                      <div class="col-md-6 col-sm-6 col-xs-12">Scheduled Dose</div>
+                      <div class="col-md-6 col-sm-6 col-xs-12" id="slides_dose"></div>
+                    </div>
+                    <div class="row" style="width:100%">
+                      <div class="col-md-6 col-sm-6 col-xs-12">Scheduled Rate</div>
+                      <div class="col-md-6 col-sm-6 col-xs-12" id="slides_rate"></div>
+                    </div>
+                    <div class="row" style="width:100%">
+                      <div class="col-md-6 col-sm-6 col-xs-12">Weather Expected</div>
+                      <div class="col-md-6 col-sm-6 col-xs-12"><i id ="weatherIcon"></i></div>
+                    </div>
+                  </div>
+                  <div class="col-md-2 col-sm-2 col-xs-2">
+                    <a class="next" style="float:right"> &#10095;</a>
+                  </div>
+                </div>
+                </br>
+                <div class="row">
+                  <ul>
+                    <b>Intensity</b> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="250" data-slider-step="1" data-slider-value="128" data-slider-id="RC" id="Intensity" data-slider-tooltip="hide" /></br>
+                    </br>
+                    <b>Amount</b> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="250" data-slider-step="1" data-slider-value="128" data-slider-id="RC" id="Amount" data-slider-tooltip="hide" /></br>
+                  </ul>
+                </div>
+
+
+                </div>
+
+                </div>
+                <br>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <!-- video row -->
+      </br>
+        <div class="" role="main">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel tile" style="height:100%">
+              <div class="x_title">
+                <h2>Fish Status</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content" id="3d">
+                <div class="row">
+                  <div class="col-md-9 col-sm-9 col-xs-9">
+                    <div id="fish_container" style="height: 250px"></div>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                      <i class="fa fa-check-circle" style="color:green" aria-hidden="true">   School Speed</i>
+                      <i class="fa fa-check-circle" style="color:green" aria-hidden="true">   School Feeding</i>
+                      <i class="fa fa-check-circle" style="color:green" aria-hidden="true">   School Metabolism</i>
+                      <i class="fa fa-check-circle" style="color:green" aria-hidden="true">   School Behavior</i>
+                      <i class="fa fa-check-circle" style="color:green" aria-hidden="true">   School Stress</i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="x_panel tile overflow_hidden toMakeSame" style="height:100%">
+              <div class="x_title">
+                <h2>Feeding Parameters</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content" id="sensors">
+                <div class="row">
+                  <div class="col-md-9 col-sm-9 col-xs-9" id ="canvaswrapperDiv">
+                    <div width="500">
+                    <canvas id="updating-chart" width="500" height="200"></canvas>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <ul>
+                      <input type="radio" class="toUpdate" checked="checked" name="data" value="T"> Temperature </br>
+                      <input type="radio" class="toUpdate" name="data" value="D"> Disolved Oxygen </br>
+                      <input type="radio" class="toUpdate" name="data" value="S"> Salinity
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+  </body>
+</html>

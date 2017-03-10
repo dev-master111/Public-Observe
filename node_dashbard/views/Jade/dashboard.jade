@@ -1,0 +1,238 @@
+doctype html
+html(lang='en')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    // Meta, title, CSS, favicons, etc.
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Observe
+    // Bootstrap
+    link(href='/libs/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    // Font Awesome
+    link(href='/libs/font-awesome/css/font-awesome.min.css', rel='stylesheet')
+  
+    // Custom Theme Style
+    link(href='/css/custom.min.css', rel='stylesheet')
+    link(href='/css/camera_dashboard.css', rel='stylesheet')
+    link(href='/css/weather-icons.min.css', rel='stylesheet')
+    // jQuery
+    script(src='/libs/jquery/jquery.min.js')
+    // Bootstrap
+    script(src='/libs/bootstrap/js/bootstrap.min.js')
+    script(src='/js/weather.js')
+    script(src='/js/dashboard.js')
+    style.
+      .alignleft {
+      float: left;
+      text-align:left;
+      width:30%;
+      }
+      .aligncenter {
+      float: left;
+      text-align:center;
+      width:30%;
+      }
+      .alignright {
+      float: left;
+      text-align:right;
+      width:30%;
+      }
+  body.container-fluid
+    .container.body
+      .main_container
+        // page content
+        br
+        // /top navigation
+        div(role='main')
+          .row.top_tiles
+            #logo.animated.flipInY.col-lg-3.col-md-3.col-sm-6.col-xs-12
+              .tile-stats
+                img.img-responsive(src='images/Observelogo3.png', alt='')
+            #info.animated.flipInY.col-lg-3.col-md-3.col-sm-6.col-xs-12
+              .tile-stats
+                .icon
+                  i.fa.fa-sort-amount-desc
+                .count
+                  font(size='6') 256
+                h3
+                  font(size='4') Kilo Feed
+            .animated.flipInY.col-lg-3.col-md-3.col-sm-6.col-xs-12
+              .tile-stats
+                .icon
+                  i.fa.fa-exclamation
+                .count
+                  font(size='6') 1
+                h3
+                  font(size='4') Alert: Cage 5
+            .animated.flipInY.col-lg-3.col-md-3.col-sm-6.col-xs-12
+              .tile-stats
+                .icon
+                  i#weatherIcon
+                .count
+                  font(size='6') 4&#8451
+                h3
+                  font(size='4') Weather
+        // video row
+        br
+        .row
+          .col-md-4.col-sm-4.col-xs-12
+            .x_panel.tile.overflow_hidden
+              .x_title
+                h2 Cage ID : 1
+                i#icon1.fa.fa-2x.fa-dot-circle-o(style='color:green; float:right', aria-hidden='true')
+                .clearfix
+              .x_content
+                video#vid1(width='100%', height='100%', muted='', autoplay='', loop='')
+                  source(src='videos/cut.mp4', type='video/mp4')
+                  |                   Your browser does not support the video tag.
+              #textbox
+                p.alignleft
+                  | Last feed:
+                  strong 9:20am
+                p.aligncenter
+                  | Next Feed:
+                  strong 12:20pm
+                p.alignright 1 of 3 feeds given
+              div(style='clear: both;')
+              div
+          .col-md-4.col-sm-4.col-xs-12
+            .x_panel.tile.overflow_hidden
+              .x_title
+                h2 Cage ID : 2
+                i#icon2.fa.fa-2x.fa-dot-circle-o(style='color:green; float:right', aria-hidden='true')
+                .clearfix
+              .x_content
+                video#vid2(width='100%', height='100%', muted='', autoplay='', loop='')
+                  source(src='videos/cut.mp4', type='video/mp4')
+                  |                   Your browser does not support the video tag.
+              #textbox
+                p.alignleft
+                  | Last feed:
+                  strong 9:20am
+                p.aligncenter
+                  | Next Feed:
+                  strong 12:20pm
+                p.alignright 1 of 3 feeds given
+              div(style='clear: both;')
+          .col-md-4.col-sm-4.col-xs-12
+            .x_panel.tile.overflow_hidden
+              .x_title
+                h2 Cage ID : 3
+                i#icon3.fa.fa-2x.fa-dot-circle-o(style='color:green; float:right', aria-hidden='true')
+                .clearfix
+              .x_content
+                video#vid3(width='100%', height='100%', muted='', autoplay='', loop='')
+                  source(src='videos/cut.mp4', type='video/mp4')
+                  |                   Your browser does not support the video tag.
+              #textbox
+                p.alignleft
+                  | Last feed:
+                  strong 9:20am
+                p.aligncenter
+                  | Next Feed:
+                  strong 12:20pm
+                p.alignright 1 of 3 feeds given
+              div(style='clear: both;')
+        // video row
+        br
+        .row
+          .col-md-4.col-sm-4.col-xs-12
+            .x_panel.tile.overflow_hidden
+              .x_title
+                h2 Cage ID : 4
+                i#icon4.fa.fa-2x.fa-dot-circle-o(style='color:green; float:right', aria-hidden='true')
+                .clearfix
+              .x_content
+                video#vid4(width='100%', height='100%', muted='', autoplay='', loop='')
+                  source(src='videos/cut.mp4', type='video/mp4')
+                  |                   Your browser does not support the video tag.
+              #textbox
+                p.alignleft
+                  | Last feed:
+                  strong 9:20am
+                p.aligncenter
+                  | Next Feed:
+                  strong 12:20pm
+                p.alignright 1 of 3 feeds given
+              div(style='clear: both;')
+          .col-md-4.col-sm-4.col-xs-12
+            .x_panel.tile.overflow_hidden
+              .x_title
+                h2 Cage ID : 5
+                i#icon5.fa.fa-2x.fa-dot-circle-o(style='color:red; float:right', aria-hidden='true')
+                .clearfix
+              .x_content
+                video#vid5(width='100%', height='100%', muted='', autoplay='', loop='')
+                  source(src='videos/cut.mp4', type='video/mp4')
+                  |                   Your browser does not support the video tag.
+              #textbox
+                p.alignleft
+                  | Last feed:
+                  strong 9:20am
+                p.aligncenter
+                  | Next Feed:
+                  strong 12:20pm
+                p.alignright 1 of 3 feeds given
+              div(style='clear: both;')
+          .col-md-4.col-sm-4.col-xs-12
+            .x_panel.tile.overflow_hidden
+              .x_title
+                h2 Cage ID : 6
+                i#icon.fa.fa-2x.fa-dot-circle-o(style='color:green; float:right', aria-hidden='true')
+                .clearfix
+              .x_content
+                video(width='100%', height='100%', muted='', autoplay='', loop='')
+                  source(src='videos/cut.mp4', type='video/mp4')
+                  |                   Your browser does not support the video tag.
+              #textbox
+                p.alignleft
+                  | Last feed:
+                  strong 9:20am
+                p.aligncenter
+                  | Next Feed:
+                  strong 12:20pm
+                p.alignright 1 of 3 feeds given
+              div(style='clear: both;')
+        // video row
+    // Modal
+    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+      .modal-dialog
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-hidden='true')
+            h4#myModalLabel.modal-title Welcome Back
+          .modal-body
+            center
+              h3.media-heading
+                | Alistair Binning
+                br
+                small Scottish Sea Farms
+              hr
+              // <center>
+              p(align='left')
+                strong Updates:
+                br
+                ul(align='left')
+                  | Cage Id : 1 - last feed 2 hours ago: nothing to report
+                  br
+                  |                       Cage Id : 2 - last feed 4 hours ago: feeding time in one hour
+                  br
+                  |                       Cage Id : 5 - feeding in process:
+                  strong  1 alert unresolved
+                  |  (3 minutes ago)
+                  br
+                  |                       Cage Id : 6 - last feed 3 hours ago:
+                  strong  1 alert (Resolved)
+                  |  (3 hours ago)
+                  br
+                  |                       Cage Id : 3 - ...
+                  br
+                  |                       Cage Id : 4 - ...
+                  br
+                br
+                // </center>
+          .modal-footer
+            center
+              button.btn.btn-default(type='button', data-dismiss='modal') Up to Date
+    // /gauge.js

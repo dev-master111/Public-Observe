@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Observe </title>
+
+    <!-- Bootstrap -->
+    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+    <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- JQVMap -->
+    <link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+    <!-- bootstrap-daterangepicker -->
+    <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+    <link href="../build/css/custom.min.css" rel="stylesheet">
+    <link href="../build/css/singleCamera.css" rel="stylesheet">
+    <link href="../build/css/bootstrap-slider.min.css" rel="stylesheet">
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<!-- jQuery -->
+<script src="../vendors/jquery/dist/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.1.0/Chart.min.js"></script>
+</head>
+
+
+<!-- Custom Theme Scripts -->
+<script src="../build/js/custom.min.js"></script>
+
+<!-- The moving chart -->
+<script src="../build/js/camera_Single.js"></script>
+<script src="../build/js/bootstrap-slider.min.js"></script>
+
+  </head>
+
+  <body class="container-fluid">
+    <div class="container body">
+      <div class="main_container">
+
+
+            <nav class="navbar navbar-default" style="margin-top:6px">
+              <ul class="nav navbar-nav">
+              <li><a href="camera_dashboard.html">Overview</a></li>
+              <li class="active"><a href="singleCam_dashboard.html">Live</a></li>
+              <li><a href="index2.html">Growth Data</a></li>
+              <li><a href="sensor_logs.html">Historical Logs</a></li>
+            </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Alistdair Binning
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Profile</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li><a href="index.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+
+                <li role="presentation" class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-bell-o"></i>
+                    <span class="badge bg-green">1</span>
+                  </a>
+                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                    <li>
+                      <a href="singleCam_dashboard_bad.html">
+                        <span class="image"></span>
+                        <span>
+                          <strong>Cage #76413</strong></span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                        Drop in dissolved oxygen - fish swimming quicker. <strong>Reduce feed</strong>
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="text-center">
+                        <a>
+                          <strong>See All Alerts</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+
+        <!-- /top navigation -->
+        <!-- top navigation -->
+
+        <!-- page content -->
+        <div class="" role="main">
+
+          <!-- video row -->
+          </br>
+          <div class="row">
+
+            <div class="col-md-5 col-sm-5 col-xs-12">
+              <div class="x_panel tile overflow_hidden">
+                <div class="x_title">
+                  <h2>Camera Stream</h2>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <video width="100%" height="245px"  muted autoplay loop>
+                    <source src="videos/cut.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video>
+                </div>
+              </div>
+            </div>
+
+
+            <div class="col-md-7 col-sm-7 col-xs-12">
+              <div class="x_panel tile" style="height:100%">
+                <div class="x_title">
+                  <h2>Fish Status</h2>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <div class="row">
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                      <div id="fish_container" style="height: 250px"></div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <i class="fa fa-check-circle" style="color:green" aria-hidden="true">   School Speed</i>
+                        <i class="fa fa-check-circle" style="color:green" aria-hidden="true">   School Feeding</i>
+                        <i class="fa fa-check-circle" style="color:green" aria-hidden="true">   School Metabolism</i>
+                        <i class="fa fa-check-circle" style="color:green" aria-hidden="true">   School Behavior</i>
+                        <i class="fa fa-check-circle" style="color:green" aria-hidden="true">   School Stress</i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- video row -->
+
+        <div class="row">
+
+          <div class="col-md-5 col-sm-5 col-xs-12">
+            <div class="x_panel tile overflow_hidden toMakeSame" style="height:100%">
+              <div class="x_title">
+                <h2>Feeding Parameters</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+              </br>
+                <ul>
+                  <b>Intensity</b> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="250" data-slider-step="1" data-slider-value="128" data-slider-id="RC" id="Intensity" data-slider-tooltip="hide" /></br>
+                  </br>
+                  <b>Amount</b> <input type="text" class="span2" value="" data-slider-min="0" data-slider-max="250" data-slider-step="1" data-slider-value="128" data-slider-id="RC" id="Amount" data-slider-tooltip="hide" /></br>
+                  <i class = "fa fa-bullseye" style="color:green" aria-hidden="true">Recommended Intensity / Amount</i></br>
+                  <i class = "fa fa-bullseye" style="color:#81bfde" aria-hidden="true">Actual Intensity / Amount</i>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-7 col-sm-7 col-xs-12">
+            <div class="x_panel tile toMakeSame1" style="height:100%">
+              <div class="x_title">
+                <h2>Sensor Data</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <div class="row">
+                  <div class="col-md-9 col-sm-9 col-xs-9" id ="canvaswrapperDiv">
+                    <div width="500">
+                    <canvas id="updating-chart" width="500" height="200"></canvas>
+                    </div>
+                  </div>
+                  <div class="col-md-3 col-sm-3 col-xs-3">
+                    <ul>
+                      <input type="radio" onclick="upDate()" checked="checked" name="data" value="T"> Temperature </br>
+                      <input type="radio" onclick="upDate()" name="data" value="D"> Disolved Oxygen </br>
+                      <input type="radio" onclick="upDate()" name="data" value="S"> Salinity
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /page content -->
+
+      </div>
+    </div>
+
+    <script>
+    // UPDATE GRAPHS
+      var canvas = document.getElementById('updating-chart');
+      var ctx = canvas.getContext('2d');
+      var TemperatureData = {
+          labels: [1, 2, 3, 4, 5, 6, 7],
+          datasets: [
+              {
+                  fillColor: "rgba(220,220,220,0.2)",
+                  strokeColor: "rgba(220,220,220,1)",
+                  pointColor: "rgba(220,220,220,1)",
+                  pointStrokeColor: "#fff",
+                  data: [10, 9.8, 9.85, 9.9, 10.2, 10.3, 10]
+              },
+          ]
+        };
+      var DisolvedOxyData = {
+          labels: [1, 2, 3, 4, 5, 6, 7],
+          datasets: [
+              {
+                  fillColor: "rgba(220,220,220,0.2)",
+                  strokeColor: "rgba(220,220,220,1)",
+                  pointColor: "rgba(220,220,220,1)",
+                  pointStrokeColor: "#fff",
+                  data: [13, 12.8, 13.4, 13, 12.7, 12.2, 10.7]
+              },
+          ]
+        };
+      var SalinityData = {
+          labels: [1, 2, 3, 4, 5, 6, 7],
+          datasets: [
+              {
+                  fillColor: "rgba(220,220,220,0.2)",
+                  strokeColor: "rgba(220,220,220,1)",
+                  pointColor: "rgba(220,220,220,1)",
+                  pointStrokeColor: "#fff",
+                  data: [35, 35.6, 36, 36.2, 35.5, 35.5, 35.2]
+              },
+          ]
+        };
+      var startingData = TemperatureData;
+      var latestLabel = startingData.labels[6];
+
+    // Reduce the animation steps for demo clarity.
+    var myLiveChart = new Chart(ctx).Line(startingData, {animationSteps: 15});
+    var x = 1, offset = 9.5;
+    setInterval(function(){
+      // Add two random numbers for each dataset
+      myLiveChart.addData([Math.random()*x+offset], ++latestLabel);
+      // Remove the first point so we dont just add values forever
+      myLiveChart.removeData();
+    }, 6000);
+
+    var upDate = function(){
+      $('#updating-chart').remove(); // this is my <canvas> element
+      $('#canvaswrapperDiv').append('<canvas id="updating-chart" width="500" height="200"></canvas>');
+      var value = $('input[name="data"]:checked').val();
+      var canvas = document.getElementById('updating-chart');
+      var ctx = canvas.getContext('2d');
+      if ( value == "T") {
+        startingData = TemperatureData;
+        offset = 9.5;
+        x =1;
+      } else if (value == "D") {
+        startingData = DisolvedOxyData;
+        offset = 12.5;
+        x =1;
+      } else if (value == "S") {
+        startingData = SalinityData;
+        offset = 35;
+        x = 5;
+      } else {
+        console.log("Not a correct Radio Button");
+      }
+      // Update the labels...
+      var arr = [];
+      for(var i = 0; i < 7; i++){
+        arr.push(latestLabel-i);
+      }
+      startingData.labels = arr.reverse();
+      // Reduce the animation steps for demo clarity.
+      myLiveChart = new Chart(ctx).Line(startingData, {animationSteps: 15});
+    }
+    // FINISHED WITH UPDATE GRAPHS
+    </script>
+
+
+  </body>
+</html>

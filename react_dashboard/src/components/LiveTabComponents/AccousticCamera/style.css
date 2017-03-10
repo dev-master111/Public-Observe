@@ -1,0 +1,18 @@
+.panelColour {
+  background: white;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  padding: 10px;
+  color: #73879C;
+}
+
+.textSize {
+	font-size: 13px;
+	color: #73879C
+
+}
+.xtitle{
+	border-bottom: 2px solid #E6E9ED;
+	margin-bottom: 6px;
+	margin-right: 0px;
+	margin-left: 0px;
+}

@@ -1,0 +1,541 @@
+doctype html
+html(lang='en')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    // Meta, title, CSS, favicons, etc.
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Observe 
+    // Bootstrap
+    link(href='/libs/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    // Font Awesome
+    link(href='/libs/font-awesome/css/font-awesome.min.css', rel='stylesheet')
+    // NProgress
+    //link(href='../vendors/nprogress/nprogress.css', rel='stylesheet')
+    // bootstrap-daterangepicker
+    link(href='/libs/bootstrap/css/daterangepicker.css', rel='stylesheet')
+    // Custom Theme Style
+    link(href='/css/custom.min.css', rel='stylesheet')
+    nav.navbar.navbar-default(style='margin-top:6px')
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+        #myNavbar.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a(href='camera_dashboard') Overview
+            li
+              a(href='live') Live
+            li.active
+              a(href='finance') Growth Data
+            li
+              a(href='logs') Historical Logs
+          ul.nav.navbar-nav.navbar-right
+            li
+              a.user-profile.dropdown-toggle(href='javascript:;', data-toggle='dropdown', aria-expanded='false')
+                | Alistdair Binning
+                span.fa.fa-angle-down
+              ul.dropdown-menu.dropdown-usermenu.pull-right
+                li
+                  a(href='javascript:;')  Profile
+                li
+                  a(href='javascript:;')
+                    span Settings
+                li
+                  a(href='index.html')
+                    i.fa.fa-sign-out.pull-right
+                    |  Log Out
+            li.dropdown(role='presentation')
+              a.dropdown-toggle.info-number(href='javascript:;', data-toggle='dropdown', aria-expanded='false')
+                i.fa.fa-bell-o
+                span.badge.bg-green 1
+              ul#menu1.dropdown-menu.list-unstyled.msg_list(role='menu')
+                li
+                  a(href='singleCam_dashboard_bad.html')
+                    span.image
+                    span
+                      strong Cage #76413
+                    span.time 3 mins ago
+                    span.message
+                      | Drop in dissolved oxygen - fish swimming quicker. 
+                      strong Reduce feed
+                li
+                  .text-center
+                    a
+                      strong See All Alerts
+                      i.fa.fa-angle-right
+  br
+  // page content
+  .right_col(role='main')
+    div
+      .row
+        .col-md-12
+          .x_panel
+            .x_title
+              h2
+                | Feed Cost 
+                small Weekly
+              .filter
+                #reportrange.pull-right(style='background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc')
+                  i.glyphicon.glyphicon-calendar.fa.fa-calendar
+                  span December 30, 2016 - January 28, 2017
+                  b.caret
+              .clearfix
+            .x_content
+              .col-md-12.col-sm-12.col-xs-12
+                .demo-container(style='height:280px')
+                  #placeholder33x.demo-placeholder
+                .tiles
+                  .col-md-4.tile
+                    span Average weekly Biomass
+                    h2 4kg
+                    span.sparklineBiomass(style='height: 160px;')
+                      canvas(width='200', height='60', style='display: inline-block; vertical-align: top; width: 94px; height: 30px;')
+                  .col-md-4.tile
+                    span Total Annual Feed Cost
+                    h2 $100,809
+                    span.sparkline11.graph(style='height: 160px;')
+                      canvas(width='200', height='60', style='display: inline-block; vertical-align: top; width: 94px; height: 30px;')
+                  .col-md-4.tile
+                    span Estimated Cage Revenue
+                    h2 $250,809
+                    span.sparklineEstRev.graph(style='height: 160px;')
+                      canvas(width='200', height='60', style='display: inline-block; vertical-align: top; width: 94px; height: 30px;')
+      .row
+        .col-md-12
+          .x_panel
+            .x_title
+              h2
+                | Weekly Perfromance 
+                small Costs
+              ul.nav.navbar-right.panel_toolbox
+                li
+                  a.collapse-link
+                    i.fa.fa-chevron-up
+                li.dropdown
+                  a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-expanded='false')
+                    i.fa.fa-wrench
+                  ul.dropdown-menu(role='menu')
+                    li
+                      a(href='#') Settings 1
+                    li
+                      a(href='#') Settings 2
+                li
+                  a.close-link
+                    i.fa.fa-close
+              .clearfix
+            .x_content
+              .row(style='border-bottom: 1px solid #E0E0E0; padding-bottom: 5px; margin-bottom: 5px;')
+                h4(style='margin:18px') Differential cost of feed put in to amount recommended
+                .col-md-7(style='overflow:hidden;')
+                  span.sparkline_one(style='height: 160px; padding: 10px 25px;')
+                    canvas(width='200', height='60', style='display: inline-block; vertical-align: top; width: 94px; height: 30px;')
+                .col-md-5
+                  h4(style='margin:18px', text-align:center;='')
+                    large
+                      h2 Weekly amount saved:
+                      h1 $1000
+      // /page content
+      // footer content
+      // /footer content
+  // jQuery
+  script(src='/libs/jquery/jquery.min.js')
+  // Bootstrap
+  script(src='/libs/bootstrap/js/bootstrap.min.js')
+  // FastClick
+  script(src='/libs/fastclick/fastclick.js')
+  // NProgress
+  script(src='/libs/nprogress/nprogress.js')
+  // Chart.js
+  script(src='/libs/ChartJS/Chart.min.js')
+  // jQuery Sparklines
+  script(src='/libs/jquery/jquery.sparkline.min.js')
+  // Flot
+  script(src='/libs/Flot/jquery.flot.js')
+  script(src='/libs/Flot/jquery.flot.pie.js')
+  script(src='/libs/Flot/jquery.flot.time.js')
+  script(src='/libs/Flot/jquery.flot.stack.js')
+  script(src='/libs/Flot/jquery.flot.resize.js')
+  // Flot plugins
+  script(src='/libs/Flot/jquery.flot.orderBars.js')
+  script(src='/libs/Flot/jquery.flot.spline.min.js')
+  script(src='/libs/Flot/curvedLines.js')
+  // DateJS
+  script(src='/libs/DateJS/date.js')
+  // bootstrap-daterangepicker
+  script(src='/libs/moment/moment.min.js')
+  script(src='/libs/bootstrap/js/daterangepicker.js')
+  // Custom Theme Scripts
+  script(src='/js/custom.min.js')
+  // Flot
+  script.
+    $(document).ready(function() {
+    //define chart clolors ( you maybe add more colors if you want or flot will add it automatic )
+    var chartColours = ['#96CA59', '#3F97EB', '#72c380', '#6f7a8a', '#f7cb38', '#5a8022', '#2c7282'];
+    //generate random number for charts
+    randNum = function() {
+    return (Math.floor(Math.random() * (1 + 400 - 20))) + 20;
+    };
+    var d1 = [];
+    //var d2 = [];
+    //here we generate data for chart
+    for (var i = 0; i < 30; i++) {
+    d1.push([new Date(Date.today().add(i).days()).getTime(), randNum() + i + i + 10]);
+    //    d2.push([new Date(Date.today().add(i).days()).getTime(), randNum()]);
+    }
+    var chartMinDate = d1[0][0]; //first day
+    var chartMaxDate = d1[20][0]; //last day
+    var tickSize = [1, "day"];
+    var tformat = "%d/%m/%y";
+    //graph options
+    var options = {
+    grid: {
+    show: true,
+    aboveData: true,
+    color: "#3f3f3f",
+    labelMargin: 10,
+    axisMargin: 0,
+    borderWidth: 0,
+    borderColor: null,
+    minBorderMargin: 5,
+    clickable: true,
+    hoverable: true,
+    autoHighlight: true,
+    mouseActiveRadius: 100
+    },
+    series: {
+    lines: {
+    show: true,
+    fill: true,
+    lineWidth: 2,
+    steps: false
+    },
+    points: {
+    show: true,
+    radius: 4.5,
+    symbol: "circle",
+    lineWidth: 3.0
+    }
+    },
+    legend: {
+    position: "ne",
+    margin: [0, -25],
+    noColumns: 0,
+    labelBoxBorderColor: null,
+    labelFormatter: function(label, series) {
+    // just add some space to labes
+    return label + '&nbsp;&nbsp;';
+    },
+    width: 40,
+    height: 1
+    },
+    colors: chartColours,
+    shadowSize: 0,
+    tooltip: true, //activate tooltip
+    tooltipOpts: {
+    content: "%s: %y.0",
+    xDateFormat: "%d/%m",
+    shifts: {
+    x: -30,
+    y: -50
+    },
+    defaultTheme: false
+    },
+    yaxis: {
+    min: 0
+    },
+    xaxis: {
+    mode: "time",
+    minTickSize: tickSize,
+    timeformat: tformat,
+    min: chartMinDate,
+    max: chartMaxDate
+    }
+    };
+    var plot = $.plot($("#placeholder33x"), [{
+    label: "Cost of feedings session",
+    data: d1,
+    lines: {
+    fillColor: "rgba(150, 202, 89, 0.12)"
+    }, //#96CA59 rgba(150, 202, 89, 0.42)
+    points: {
+    fillColor: "#fff"
+    }
+    }], options);
+    function showTooltip(x, y, contents) {
+    if( clicksYet )
+    contents += (pointClicked)? ' hello':' bye';
+    $('<div id="tooltip">' + contents + '</div>').css( {
+    position: 'absolute',
+    display: 'none',
+    top: y + 5,
+    left: x + 5,
+    border: '1px solid #34495E',
+    padding: '2px',
+    'background-color': '#34495E',
+    color:'white',
+    opacity: 1
+    }).appendTo("body").fadeIn(200);
+    }
+    $('body').popover({
+    selector: '[data-popover]',
+    trigger: 'click hover',
+    delay: {
+    show: 50,
+    hide: 400
+    }
+    });
+    var previousPoint = null;
+    $("#placeholder33x").bind("plothover", function (event, pos, item) {
+    // $("#x").text(pos.x.toFixed(2));
+    // $("#y").text(pos.y.toFixed(2));
+    if (item) {
+    if (previousPoint != item.datapoint) {
+    previousPoint = item.datapoint;
+    $("#tooltip").remove();
+    var x = item.datapoint[0].toFixed(2),
+    y = item.datapoint[1].toFixed(2);
+    showTooltip(item.pageX, item.pageY,
+    "Cost: $" + y + " </br> Type: 2.0 Optimum </br> Feeder: Alistdair Binning" );
+    }
+    }
+    else {
+    $("#tooltip").remove();
+    clicksYet = false;
+    previousPoint = null;
+    }
+    });
+    });
+  // /Flot
+  // jQuery Sparklines
+  script.
+    $(document).ready(function() {
+    $(".sparkline_one").sparkline([0.2, -0.4, 0.5, 0.1, 0.2, 0.4, -0.5, 0.4, -0.3, 0.4, -0.5, 0.6, 0.4, 0.5, 0.6, -0.3, 0.5, 0.4, -0.5, 0.4, -0.5, 0.4, -0.3, 0.4, 0.5, 0.6, -0.7, 0.5, 0.4, 0.3, -0.5, 0.6], {
+    type: 'bar',
+    height: '125',
+    barWidth: 13,
+    colorMap: {
+    '7': '#a1a1a1'
+    },
+    barSpacing: 2,
+    barColor: '#26B99A'
+    });
+    $(".sparklineBiomass").sparkline([2.45, 2.56, 2.69, 2.78, 2.9, 3.1, 3.3, 3.4, 3.7, 3.9, 4.2, 4.2, 4, 4.2, 3.98, 4.1, 4.12, 4.06, 4 ], {
+    type: 'bar',
+    height: '40',
+    barWidth: 8,
+    colorMap: {
+    '7': '#a1a1a1'
+    },
+    barSpacing: 2,
+    barColor: '#26B99A'
+    });
+    $(".sparkline11").sparkline([6, 4, 6, 4, 5, 4, 5, 4, 3, 4, 6, 2, 4, 3, 4, 5, 4, 5, 4, 3], {
+    type: 'bar',
+    height: '40',
+    barWidth: 8,
+    colorMap: {
+    '7': '#a1a1a1'
+    },
+    barSpacing: 2,
+    barColor: '#26B99A'
+    });
+    $(".sparkline22").sparkline([2, 4, 3, 4, 7, 5, 4, 3, 5, 6, 2, 4, 3, 4, 5, 4, 5, 4, 3, 4, 6], {
+    type: 'line',
+    height: '40',
+    width: '200',
+    lineColor: '#26B99A',
+    fillColor: '#ffffff',
+    lineWidth: 3,
+    spotColor: '#34495E',
+    minSpotColor: '#34495E'
+    });
+    $(".sparklineEstRev").sparkline([150, 174, 162, 178, 200, 190, 150, 205, 200, 210, 215, 217, 216, 217, 220, 225, 229, 230, 235, 236, 232], {
+    type: 'line',
+    height: '40',
+    width: '200',
+    lineColor: '#26B99A',
+    fillColor: '#ffffff',
+    lineWidth: 3,
+    spotColor: '#34495E',
+    minSpotColor: '#34495E'
+    });
+    });
+  // /jQuery Sparklines
+  // Doughnut Chart
+  script.
+    $(document).ready(function() {
+    var canvasDoughnut,
+    options = {
+    legend: false,
+    responsive: false
+    };
+    new Chart(document.getElementById("canvas1i"), {
+    type: 'doughnut',
+    tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+    data: {
+    labels: [
+    "Symbian",
+    "Blackberry",
+    "Other",
+    "Android",
+    "IOS"
+    ],
+    datasets: [{
+    data: [15, 20, 30, 10, 30],
+    backgroundColor: [
+    "#BDC3C7",
+    "#9B59B6",
+    "#E74C3C",
+    "#26B99A",
+    "#3498DB"
+    ],
+    hoverBackgroundColor: [
+    "#CFD4D8",
+    "#B370CF",
+    "#E95E4F",
+    "#36CAAB",
+    "#49A9EA"
+    ]
+    }]
+    },
+    options: options
+    });
+    new Chart(document.getElementById("canvas1i2"), {
+    type: 'doughnut',
+    tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+    data: {
+    labels: [
+    "Symbian",
+    "Blackberry",
+    "Other",
+    "Android",
+    "IOS"
+    ],
+    datasets: [{
+    data: [15, 20, 30, 10, 30],
+    backgroundColor: [
+    "#BDC3C7",
+    "#9B59B6",
+    "#E74C3C",
+    "#26B99A",
+    "#3498DB"
+    ],
+    hoverBackgroundColor: [
+    "#CFD4D8",
+    "#B370CF",
+    "#E95E4F",
+    "#36CAAB",
+    "#49A9EA"
+    ]
+    }]
+    },
+    options: options
+    });
+    new Chart(document.getElementById("canvas1i3"), {
+    type: 'doughnut',
+    tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+    data: {
+    labels: [
+    "Symbian",
+    "Blackberry",
+    "Other",
+    "Android",
+    "IOS"
+    ],
+    datasets: [{
+    data: [15, 20, 30, 10, 30],
+    backgroundColor: [
+    "#BDC3C7",
+    "#9B59B6",
+    "#E74C3C",
+    "#26B99A",
+    "#3498DB"
+    ],
+    hoverBackgroundColor: [
+    "#CFD4D8",
+    "#B370CF",
+    "#E95E4F",
+    "#36CAAB",
+    "#49A9EA"
+    ]
+    }]
+    },
+    options: options
+    });
+    });
+  // /Doughnut Chart
+  // bootstrap-daterangepicker
+  script(type='text/javascript').
+    $(document).ready(function() {
+    var cb = function(start, end, label) {
+    console.log(start.toISOString(), end.toISOString(), label);
+    $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+    };
+    var optionSet1 = {
+    startDate: moment().subtract(29, 'days'),
+    endDate: moment(),
+    minDate: '01/01/2012',
+    maxDate: '12/31/2015',
+    dateLimit: {
+    days: 60
+    },
+    showDropdowns: true,
+    showWeekNumbers: true,
+    timePicker: false,
+    timePickerIncrement: 1,
+    timePicker12Hour: true,
+    ranges: {
+    'Today': [moment(), moment()],
+    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+    'This Month': [moment().startOf('month'), moment().endOf('month')],
+    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+    },
+    opens: 'left',
+    buttonClasses: ['btn btn-default'],
+    applyClass: 'btn-small btn-primary',
+    cancelClass: 'btn-small',
+    format: 'MM/DD/YYYY',
+    separator: ' to ',
+    locale: {
+    applyLabel: 'Submit',
+    cancelLabel: 'Clear',
+    fromLabel: 'From',
+    toLabel: 'To',
+    customRangeLabel: 'Custom',
+    daysOfWeek: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+    monthNames: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    firstDay: 1
+    }
+    };
+    $('#reportrange span').html(moment().subtract(29, 'days').format('MMMM D, YYYY') + ' - ' + moment().format('MMMM D, YYYY'));
+    $('#reportrange').daterangepicker(optionSet1, cb);
+    $('#reportrange').on('show.daterangepicker', function() {
+    console.log("show event fired");
+    });
+    $('#reportrange').on('hide.daterangepicker', function() {
+    console.log("hide event fired");
+    });
+    $('#reportrange').on('apply.daterangepicker', function(ev, picker) {
+    console.log("apply event fired, start/end dates are " + picker.startDate.format('MMMM D, YYYY') + " to " + picker.endDate.format('MMMM D, YYYY'));
+    });
+    $('#reportrange').on('cancel.daterangepicker', function(ev, picker) {
+    console.log("cancel event fired");
+    });
+    $('#options1').click(function() {
+    $('#reportrange').data('daterangepicker').setOptions(optionSet1, cb);
+    });
+    $('#options2').click(function() {
+    $('#reportrange').data('daterangepicker').setOptions(optionSet2, cb);
+    });
+    $('#destroy').click(function() {
+    $('#reportrange').data('daterangepicker').remove();
+    });
+    });
+  // /bootstrap-daterangepicker

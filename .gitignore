@@ -1,0 +1,10 @@
+node_modules/
+node_dashbard/config/db_config.js
+react_dashboard/src/config_mysql.js
+react_dashboard/build/
+
+sb-admin-react/
+
+assets/i18n/es.json
+
+react_dashboard/build/assets.js

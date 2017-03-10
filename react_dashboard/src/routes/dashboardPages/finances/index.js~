@@ -1,0 +1,9 @@
+import React from 'react';
+import Live from './Live';
+
+export default {
+  path: '/finances',
+  action() {
+    return <Live />;
+  }
+};

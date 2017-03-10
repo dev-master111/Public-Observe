@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Observe </title>
+
+    <link href='/libs/bootstrap/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='/libs/bootstrap/css/bootstrap-slider.min.css' rel='stylesheet'>
+    <link href='/libs/font-awesome/css/font-awesome.min.css' rel='stylesheet'>
+    <link href='/css/custom.min.css' rel='stylesheet'>
+    <link href='/css/weather-icons.min.css' rel='stylesheet'>
+    <script src='/libs/jquery/jquery.min.js'></script>
+    <script src='/libs/bootstrap/js/bootstrap.min.js'></script>
+    <script src='/libs/ChartJS/Chart.min.js'></script>
+    <script src='/js/weather.js'></script>
+    <script src='/js/logs.js'></script>
+  </head>
+
+  <body class="container-fluid">
+    <div class="container body">
+      <div class="main_container">
+
+        <nav class="navbar navbar-default" style="margin-top:6px">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav">
+                <li><a href="camera_dashboard">Overview</a></li>
+                <li><a href="live">Live</a></li>
+                <li><a href="finance">Growth Data</a></li>
+                <li class="active"><a href="logs">Historical Logs</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                    Alistdair Binning
+                    <span class=" fa fa-angle-down"></span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-usermenu pull-right">
+                    <li><a href="javascript:;"> Profile</a></li>
+                    <li>
+                      <a href="javascript:;">
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                    <li><a href="index.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                  </ul>
+                </li>
+
+                <li role="presentation" class="dropdown">
+                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                    <i class="fa fa-bell-o"></i>
+                    <span class="badge bg-green">1</span>
+                  </a>
+                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                    <li>
+                      <a href="singleCam_dashboard_bad.html">
+                        <span class="image"></span>
+                        <span>
+                          <strong>Cage #76413</strong></span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                        Drop in dissolved oxygen - fish swimming quicker. <strong>Reduce feed</strong>
+                        </span>
+                      </a>
+                    </li>
+                    <li>
+                      <div class="text-center">
+                        <a>
+                          <strong>See All Alerts</strong>
+                          <i class="fa fa-angle-right"></i>
+                        </a>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+
+        <!-- page content -->
+        <div class="" role="main">
+        </br>
+          <div class="row top_tiles">
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div class="tile-stats">
+                <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
+                <div class="count">256</div>
+                <h3>Kilo Feed</h3>
+              </div>
+            </div>
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div class="tile-stats">
+                <div class="icon"><i class="fa fa-exclamation"></i></div>
+                <div class="count">1</div>
+                <h3>Alert Cage #76413</h3>
+              </div>
+            </div>
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div class="tile-stats">
+                <div class="icon"><i class="fa fa-bolt"></i></div>
+                <div class="count">10.6</div>
+                <h3>Average Speed</h3>
+              </div>
+            </div>
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div class="tile-stats">
+                <div class="icon"><i class="fa fa-times"></i></div>
+                <div class="count">0</div>
+                <h3>Mortalities</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        </br>
+        <div class="row">
+          <div class="col-md-9 col-sm-9 col-xs-12">
+            <div class="x_panel tile toMakeSame1" style="height:100%">
+              <div class="x_title">
+                <h2>Feeding Logs</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <div width="500">
+                <canvas id="Fupdating-chart" width="800px" height="200"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-3 col-sm-3 col-xs-12">
+                      <div class= "x_panel tile toMakeSame">
+                        <div class="x_title">
+                          <h2>Feeding Observations</h2>
+                          <div class="clearfix"></div>
+                        </div>
+                        <ul class="list-unstyled top_profiles scroll-view pre-scrollable">
+                          <li class="media event">
+                            <a class="pull-left border-aero profile_thumb">
+                              <i class="fa fa-user aero"></i>
+                            </a>
+                            <div class="media-body">
+                           <a class="title" href="#">Alisdair Binning</a>
+                              <p><strong>6kg </strong> Feed supplied </p>
+                               <p><small>21 January 2017</small></p>
+                              <p> <small>Increased Temperature and more fish on surface hence more feed added</small>
+                              </p>
+                          </li>
+                          <li class="media event">
+                            <a class="pull-left border-green profile_thumb">
+                              <i class="fa fa-user green"></i>
+                            </a>
+                            <div class="media-body">
+                              <a class="title" href="#">Pieter Fabry</a>
+                              <p><strong>6kg </strong> Feed supplied </p>
+                               <p><small>21 January 2017</small></p>
+                              <p> <small>Increased Temperature and more fish on surface hence more feed added</small>
+                              </p>
+                            </div>
+                          </li>
+                          <li class="media event">
+                            <a class="pull-left border-blue profile_thumb">
+                              <i class="fa fa-user blue"></i>
+                            </a>
+                            <div class="media-body">
+                               <a class="title" href="#">Pieter Fabry</a>
+                              <p><strong>6kg </strong> Feed supplied </p>
+                               <p><small>21 January 2017</small></p>
+                              <p> <small>Increased Temperature and more fish on surface hence more feed added</small>
+                              </p>
+                            </div>
+                          </li>
+                          <li class="media event">
+                            <a class="pull-left border-aero profile_thumb">
+                              <i class="fa fa-user aero"></i>
+                            </a>
+                            <div class="media-body">
+                               <a class="title" href="#">Alisdair Binning</a>
+                              <p><strong>6kg </strong> Feed supplied </p>
+                               <p><small>21 January 2017</small></p>
+                              <p> <small>Increased Temperature and more fish on surface hence more feed added</small>
+                              </p>
+                            </div>
+                          </li>
+                          <li class="media event">
+                            <a class="pull-left border-green profile_thumb">
+                              <i class="fa fa-user green"></i>
+                            </a>
+                            <div class="media-body">
+                               <a class="title" href="#">Alisdair Binning</a>
+                              <p><strong>6kg </strong> Feed supplied </p>
+                               <p><small>21 January 2017</small></p>
+                              <p> <small>Increased Temperature and more fish on surface hence more feed added</small>
+                              </p>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+
+
+        </div>
+      </br>
+        <div class="row">
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="x_panel tile toMakeSame1" style="height:100%">
+              <div class="x_title">
+                <h2>Temperature Logs</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <div width="500">
+                <canvas id="Tupdating-chart" width="350px" height="200"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="x_panel tile toMakeSame1" style="height:100%">
+              <div class="x_title">
+                <h2>Disolved Oxygen Logs</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <div width="500">
+                <canvas id="Dupdating-chart" width="350px" height="200"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="x_panel tile toMakeSame1" style="height:100%">
+              <div class="x_title">
+                <h2>Salinity Logs</h2>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <div width="500">
+                <canvas id="Supdating-chart" width="350px" height="200"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+
+        <!-- /page content -->
+
+      </div>
+    </div>
+
+  </body>
+</html>

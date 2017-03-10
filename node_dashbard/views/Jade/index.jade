@@ -1,0 +1,51 @@
+doctype html
+html(lang='en')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    // Meta, title, CSS, favicons, etc.
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Observe
+    // Bootstrap
+    link(href='/libs/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    // Font Awesome
+    link(href='/css/loginpage.css', rel='stylesheet')
+    // jQuery
+    script(src='/libs/jquery/jquery.min.js')
+    // Bootstrap
+    script(src='/libs/bootstrap/js/bootstrap.min.js')
+    // Custom Theme Scripts
+    script(src='/js/custom.min.js')
+  body.container-fluid
+    .container.body
+      .main_container
+        .container
+          #pwd-container.row
+            .col-md-4
+            .col-md-4
+              section.login-form
+                // method="post"
+                form(action='#', role='login')
+                  img.img-responsive(src='images/Observelogo.png', alt='')
+                  input#email.form-control.input-lg(type='text', placeholder='Manager ID', required='')
+                  input#password.form-control.input-lg(type='password', placeholder='Password', required='')
+                  .pwstrength_viewport_progress
+                  button.btn.btn-lg.btn-primary.btn-block(type='button', onclick='Signin()') Sign in
+                  div
+                    a(href='/live') Create account
+                    |  or 
+                    a(href='#') reset password
+                .form-links
+                  a(href='www.observe.tech') www.observe.tech
+            .col-md-4
+
+        script.
+          var Signin = function(){
+          var username = $("#email").val()
+          var password = $("#password").val()
+          if(username == "admin" && password == "admin"){
+          location.replace("camera_dashboard")
+          }
+          }
+        // /gauge.js

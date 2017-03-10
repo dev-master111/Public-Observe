@@ -1,0 +1,9 @@
+import React from 'react';
+import Live from './Logs';
+
+export default {
+  path: '/logs',
+  action() {
+    return <Logs />;
+  }
+};

@@ -1,0 +1,203 @@
+doctype html
+html(lang='en')
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    // Meta, title, CSS, favicons, etc.
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Observe 
+    // Bootstrap
+    link(href='/libs/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    // Font Awesome
+    link(href='/libs/font-awesome/css/font-awesome.min.css', rel='stylesheet')
+    
+    // Custom Theme Style
+    link(href='/css/custom.min.css', rel='stylesheet')
+    link(href='/css/singleCamera.css', rel='stylesheet')
+    link(href='/libs/bootstrap/css/bootstrap-slider.min.css', rel='stylesheet')
+    link(href='/css/weather-icons.min.css', rel='stylesheet')
+    
+    // jQuery
+    script(src='/libs/jquery/jquery.min.js')
+    // Bootstrap
+    script(src='/libs/bootstrap/js/bootstrap.min.js')
+    script(src='/libs/bootstrap/js/bootstrap-slider.min.js')
+
+    // highcharts
+    script(src='/libs/HighChart/highcharts.js')
+    script(src='/libs/HighChart/highcharts-3d.js')
+    // Charts
+    script(src='/libs/ChartJS/Chart.min.js')
+    script(src='/js/libs/suncalc.js')
+
+    script(src='/js/camera_singleFeedWidget.js')
+    script(src='/js/camera_Single.js')
+    script(src='/js/weather.js')
+    script(src='/js/updatingSensorCharts.js')
+  body.container-fluid
+    .container.body
+      .main_container
+        // page content
+        nav.navbar.navbar-default(style='margin-top:6px')
+          .container-fluid
+            .navbar-header
+              button.navbar-toggle(type='button', data-toggle='collapse', data-target='#myNavbar')
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            #myNavbar.collapse.navbar-collapse
+              ul.nav.navbar-nav
+                li
+                  a(href='camera_dashboard') Overview
+                li.active
+                  a(href='live') Live
+                li
+                  a(href='finance') Growth Data
+                li
+                  a(href='logs') Historical Logs
+              ul.nav.navbar-nav.navbar-right
+                li
+                  a.user-profile.dropdown-toggle(href='javascript:;', data-toggle='dropdown', aria-expanded='false')
+                    | Alistdair Binning
+                    span.fa.fa-angle-down
+                  ul.dropdown-menu.dropdown-usermenu.pull-right
+                    li
+                      a(href='javascript:;')  Profile
+                    li
+                      a(href='javascript:;')
+                        span Settings
+                    li
+                      a(href='index.html')
+                        i.fa.fa-sign-out.pull-right
+                        |  Log Out
+                li.dropdown(role='presentation')
+                  a.dropdown-toggle.info-number(href='javascript:;', data-toggle='dropdown', aria-expanded='false')
+                    i.fa.fa-bell-o
+                    span.badge.bg-green 1
+                  ul#menu1.dropdown-menu.list-unstyled.msg_list(role='menu')
+                    li
+                      a(href='singleCam_dashboard_bad.html')
+                        span.image
+                        span
+                          strong Cage #76413
+                        span.time 3 mins ago
+                        span.message
+                          | Drop in dissolved oxygen - fish swimming quicker. 
+                          strong Reduce feed
+                    li
+                      .text-center
+                        a
+                          strong See All Alerts
+                          i.fa.fa-angle-right
+        // video row
+        br
+        .row
+          .col-md-6.col-sm-6.col-xs-12
+            .x_panel.tile.overflow_hidden
+              .x_title
+                h2 Camera Stream
+                .clearfix
+              #video_.x_content
+                video(width='100%', height='245px', muted='', autoplay='', loop='')
+                  source(src='videos/cut.mp4', type='video/mp4')
+                  |                 Your browser does not support the video tag.
+          .col-md-6.col-sm-6.col-xs-12
+            .x_panel.tile(style='height:100%')
+              .x_title
+                h2 Feeding Parameters
+                .clearfix
+              #feeding_params.x_content
+                .row(style='width:100%')
+                  .col-md-1.col-sm-1.col-xs-1(style='border-right: solid grey 1px;') 02:00
+                  .col-md-1.col-sm-1.col-xs-1(style='border-right: solid grey 1px;') 04:00
+                  .col-md-1.col-sm-1.col-xs-1(style='border-right: solid grey 1px;') 06:00
+                  .col-md-1.col-sm-1.col-xs-1(style='border-right: solid grey 1px;') 08:00
+                  .col-md-1.col-sm-1.col-xs-1(style='border-right: solid grey 1px;') 10:00
+                  .col-md-1.col-sm-1.col-xs-1(style='border-right: solid grey 1px;') 12:00
+                  .col-md-1.col-sm-1.col-xs-1(style='border-right: solid grey 1px;') 14:00
+                  .col-md-1.col-sm-1.col-xs-1(style='border-right: solid grey 1px;') 16:00
+                  .col-md-1.col-sm-1.col-xs-1(style='border-right: solid grey 1px;') 18:00
+                  .col-md-1.col-sm-1.col-xs-1(style='border-right: solid grey 1px;') 20:00
+                  .col-md-1.col-sm-1.col-xs-1(style='border-right: solid grey 1px;') 22:00
+                  .col-md-1.col-sm-1.col-xs-1(style='border-right: solid grey 1px;') 24:00
+                .row(style='width:100%')
+                  #day_timeline.col-md-12.col-sm-12.col-xs-12(style='padding:0px;height:10px')
+                    #Night1
+                    #Dawn
+                    #Sunlight
+                    #Dusk
+                    #Night2
+                    #slider.day_slider
+                br
+                .row(style='width:100%')
+                  .col-md-2.col-sm-2.col-xs-2
+                    a.prev(style='float:left')  ❮
+                  .col-md-8.col-sm-8.col-xs-8
+                    .row(style='width:100%')
+                      .col-md-6.col-sm-6.col-xs-12 Meal
+                      #slides_meal.col-md-6.col-sm-6.col-xs-12
+                    .row(style='width:100%')
+                      .col-md-6.col-sm-6.col-xs-12 Scheduled Time
+                      #slides_time.col-md-6.col-sm-6.col-xs-12
+                    .row(style='width:100%')
+                      .col-md-6.col-sm-6.col-xs-12 Scheduled Dose
+                      #slides_dose.col-md-6.col-sm-6.col-xs-12
+                    .row(style='width:100%')
+                      .col-md-6.col-sm-6.col-xs-12 Scheduled Rate
+                      #slides_rate.col-md-6.col-sm-6.col-xs-12
+                    .row(style='width:100%')
+                      .col-md-6.col-sm-6.col-xs-12 Weather Expected
+                      .col-md-6.col-sm-6.col-xs-12
+                        i#weatherIcon
+                  .col-md-2.col-sm-2.col-xs-2
+                    a.next(style='float:right')  ❯
+                br
+                .row
+                  ul
+                    b Intensity
+                    input#Intensity.span2(type='text', value='', data-slider-min='0', data-slider-max='250', data-slider-step='1', data-slider-value='128', data-slider-id='RC', data-slider-tooltip='hide')
+                    br
+                    br
+                    b Amount
+                    input#Amount.span2(type='text', value='', data-slider-min='0', data-slider-max='250', data-slider-step='1', data-slider-value='128', data-slider-id='RC', data-slider-tooltip='hide')
+                    br
+            br
+    // video row
+    br
+    div(role='main')
+      .col-md-6.col-sm-6.col-xs-12
+        .x_panel.tile(style='height:100%')
+          .x_title
+            h2 Fish Status
+            .clearfix
+          #3d.x_content
+            .row
+              .col-md-9.col-sm-9.col-xs-9
+                #fish_container(style='height: 250px')
+              .col-md-3.col-sm-3.col-xs-3
+                i.fa.fa-check-circle(style='color:green', aria-hidden='true')    School Speed
+                i.fa.fa-check-circle(style='color:green', aria-hidden='true')    School Feeding
+                i.fa.fa-check-circle(style='color:green', aria-hidden='true')    School Metabolism
+                i.fa.fa-check-circle(style='color:green', aria-hidden='true')    School Behavior
+                i.fa.fa-check-circle(style='color:green', aria-hidden='true')    School Stress
+      .col-md-6.col-sm-6.col-xs-12
+        .x_panel.tile.overflow_hidden.toMakeSame(style='height:100%')
+          .x_title
+            h2 Feeding Parameters
+            .clearfix
+          #sensors.x_content
+            .row
+              #canvaswrapperDiv.col-md-9.col-sm-9.col-xs-9
+                div(width='400')
+                  canvas#updating-chart(width='400', height='200')
+              .col-md-3.col-sm-3.col-xs-3
+                ul
+                  input.toUpdate(type='radio', checked='checked', name='data', value='T')
+                  |  Temperature 
+                  br
+                  input.toUpdate(type='radio', name='data', value='D')
+                  |  Disolved Oxygen 
+                  br
+                  input.toUpdate(type='radio', name='data', value='S')
+                  |  Salinity

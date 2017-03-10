@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <!-- Meta, title, CSS, favicons, etc. -->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Observe </title>
+
+    <link href='/libs/bootstrap/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='/libs/font-awesome/css/font-awesome.min.css' rel='stylesheet'>
+    <link href='/css/custom.min.css' rel='stylesheet'>
+    <link href='/css/camera_dashboard.css' rel='stylesheet'>
+    <link href='/css/weather-icons.min.css' rel='stylesheet'>
+    <script src='/libs/jquery/jquery.min.js'></script>
+    <script src='/libs/bootstrap/js/bootstrap.min.js'></script>
+    <script src='/js/weather.js'></script>
+    <script src='/js/dashboard.js'></script>
+   <style> .alignleft {
+    float: left;
+    text-align:left;
+    width:30%;
+    }
+    .aligncenter {
+    float: left;
+    text-align:center;
+    width:30%;
+    }
+    .alignright {
+    float: left;
+    text-align:right;
+    width:30%;
+    }
+    </style>
+  </head>
+
+  <body class="container-fluid">
+    <div class="container body">
+      <div class="main_container">
+
+
+        <!-- page content -->
+            <br>
+          <!-- /top navigation -->
+          <div class="row" role="main">
+
+
+          <div class="row top_tiles">
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12" id="logo">
+                <div class="tile-stats">
+                  <img src="images/Observelogo3.png"  class="img-responsive" alt="">
+                </div>
+              </div>
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12" style="height: 98px;">
+              <div class="tile-stats">
+                <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
+                <div class="count"><font size="6">256</font></div>
+                <h3><font size="4">Kilo Feed</font></h3>
+              </div>
+            </div>
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div class="tile-stats">
+                <div class="icon"><i class="fa fa-exclamation"></i></div>
+                <div class="count"><font size="6">1</font></div>
+                <h3><font size="4">Alert: Cage 5</font></h3>
+              </div>
+            </div>
+            <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+              <div class="tile-stats">
+                <div class="icon"><i class="fa fa-bolt"></i></div>
+                <div class="count"><font size="6">10.6</font></div>
+                <h3><font size="4">Average Speed</font></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+          <!-- video row -->
+          <br>
+          <div class="row">
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="x_panel tile overflow_hidden">
+                <div class="x_title">
+                  <h2>Cage ID : 1</h2>
+                  <i id="icon1" class="fa fa-2x fa-dot-circle-o" style="color:green; float:right" aria-hidden="true"></i>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <video id="vid1" width="100%" height="100%" muted="" autoplay="" loop="">
+                    <source src="videos/cut.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video>
+                </div>
+                <div id="textbox">
+                  <p class="alignleft">Last feed: <strong>9:20am</strong></p>
+                  <p class="aligncenter">Next Feed: <strong>12:20pm</strong></p>
+                  <p class="alignright">1 of 3 feeds given</p>
+                  </div>
+                  <div style="clear: both;"></div>
+                <div>
+              </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="x_panel tile overflow_hidden">
+                <div class="x_title">
+                  <h2>Cage ID : 2</h2>
+                  <i id="icon2" class="fa fa-2x fa-dot-circle-o" style="color:green; float:right" aria-hidden="true"></i>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <video id="vid2" width="100%" height="100%" muted="" autoplay="" loop="">
+                    <source src="videos/cut.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video>
+                </div>
+                   <div id="textbox">
+                  <p class="alignleft">Last feed: <strong>9:20am</strong></p>
+                  <p class="aligncenter">Next Feed: <strong>12:20pm</strong></p>
+                  <p class="alignright">1 of 3 feeds given</p>
+                  </div>
+                  <div style="clear: both;"></div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="x_panel tile overflow_hidden">
+                <div class="x_title">
+                  <h2>Cage ID : 3</h2>
+                  <i id="icon3" class="fa fa-2x fa-dot-circle-o" style="color:green; float:right" aria-hidden="true"></i>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <video id="vid3" width="100%" height="100%" muted="" autoplay="" loop="">
+                    <source src="videos/cut.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video>
+                </div>
+                   <div id="textbox">
+                  <p class="alignleft">Last feed: <strong>9:20am</strong></p>
+                  <p class="aligncenter">Next Feed: <strong>12:20pm</strong></p>
+                  <p class="alignright">1 of 3 feeds given</p>
+                  </div>
+                  <div style="clear: both;"></div>
+              </div>
+            </div>
+
+          </div>
+          <!-- video row -->
+
+          <br>
+          <div class="row">
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="x_panel tile overflow_hidden">
+                <div class="x_title">
+                  <h2>Cage ID : 4</h2>
+                  <i id="icon4" class="fa fa-2x fa-dot-circle-o" style="color:green; float:right" aria-hidden="true"></i>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <video id="vid4" width="100%" height="100%" muted="" autoplay="" loop="">
+                    <source src="videos/cut.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video>
+                </div>
+                   <div id="textbox">
+                  <p class="alignleft">Last feed: <strong>9:20am</strong></p>
+                  <p class="aligncenter">Next Feed: <strong>12:20pm</strong></p>
+                  <p class="alignright">1 of 3 feeds given</p>
+                  </div>
+                  <div style="clear: both;"></div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="x_panel tile overflow_hidden">
+                <div class="x_title">
+                  <h2>Cage ID : 5</h2>
+                  <i id="icon5" class="fa fa-2x fa-dot-circle-o" style="color:red; float:right" aria-hidden="true"></i>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <video id="vid5" width="100%" height="100%" muted="" autoplay="" loop="">
+                    <source src="videos/cut.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video>
+                </div>
+                   <div id="textbox">
+                  <p class="alignleft">Last feed: <strong>9:20am</strong></p>
+                  <p class="aligncenter">Next Feed: <strong>12:20pm</strong></p>
+                  <p class="alignright">1 of 3 feeds given</p>
+                  </div>
+                  <div style="clear: both;"></div>
+              </div>
+            </div>
+
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="x_panel tile overflow_hidden">
+                <div class="x_title">
+                  <h2>Cage ID : 6</h2>
+                  <i id="icon" class="fa fa-2x fa-dot-circle-o" style="color:green; float:right" aria-hidden="true"></i>
+                  <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                  <video width="100%" height="100%" muted="" autoplay="" loop="">
+                    <source src="videos/cut.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video>
+                </div>
+                   <div id="textbox">
+                  <p class="alignleft">Last feed: <strong>9:20am</strong></p>
+                  <p class="aligncenter">Next Feed: <strong>12:20pm</strong></p>
+                  <p class="alignright">1 of 3 feeds given</p>
+                  </div>
+                  <div style="clear: both;"></div>
+              </div>
+            </div>
+
+          </div>
+          <!-- video row -->
+
+      </div>
+    </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                    <h4 class="modal-title" id="myModalLabel">Welcome Back</h4>
+                    </div>
+                <div class="modal-body">
+                    <center>
+                    <h3 class="media-heading">Alistair Binning<br><small>Scottish Sea Farms</small></h3>
+
+                    <hr>
+                   <!-- <center>-->
+                    <p align="left"><strong>Updates: </strong><br>
+                      </p><ul align="left">
+                      Cage Id : 1 - last feed 2 hours ago: nothing to report<br>
+                      Cage Id : 2 - last feed 4 hours ago: feeding time in one hour <br>
+                      Cage Id : 5 - feeding in process: <strong> 1 alert unresolved </strong> (3 minutes ago)<br>
+                      Cage Id : 6 - last feed 3 hours ago: <strong> 1 alert (Resolved) </strong> (3 hours ago) <br>
+                      Cage Id : 3 - ...<br>
+                      Cage Id : 4 - ...<br>
+
+                      </ul>
+                    <br>
+                    <!--</center>-->
+                </center></div>
+                <div class="modal-footer">
+                    <center>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Up to Date</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    $( document ).ready( function() {
+      function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+      if(getCookie("unvervalue")!= "1"){
+      var d = new Date();
+      var exdays = 1/24; // Number of hours
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));//exdays*24*60*6
+      var expires = "expires="+ d.toUTCString();
+      document.cookie = "unvervalue = 1;" + expires;
+      $( '#myModal' ).modal( 'toggle' );}
+    });
+      document.getElementById('vid1').addEventListener('loadedmetadata', function() {
+      this.currentTime = 5;
+      }, false);
+      document.getElementById('vid2').addEventListener('loadedmetadata', function() {
+      this.currentTime = 10;
+      }, false);
+      document.getElementById('vid3').addEventListener('loadedmetadata', function() {
+      this.currentTime = 15;
+      }, false);
+      document.getElementById('vid4').addEventListener('loadedmetadata', function() {
+      this.currentTime = 20;
+      }, false);
+      document.getElementById('vid5').addEventListener('loadedmetadata', function() {
+      this.currentTime = 25;
+      }, false);
+
+      $('video').click(function() {
+          var id = $(this).attr('id').substring(1);
+          if(id==="id5"){
+            location.replace("SINGLECAMdashboard_bad.html")
+          }else {
+            location.replace("SINGLECAMdashboard.html")
+          }
+
+      });
+
+      $("#info").height($("#logo").height());
+
+    </script>
+    <!-- /gauge.js -->
+
+
+<script type="text/javascript">( function(){ window.SIG_EXT = {}; } )()</script></body></html>
